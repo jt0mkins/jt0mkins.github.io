@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joella Tomkins · Projects</title>
+  <meta name="description" content="Engineering projects by Joella Tomkins: flight hardware, embedded systems, STEM outreach and computer vision.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Domine:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="#top" class="brand">Joella Tomkins</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="#rf">RF Downlink</a></li>
+      <li><a href="#dawn">Dawn Aerospace</a></li>
+      <li><a href="#ywis">Young Wāhine in STEM</a></li>
+      <li><a href="#kart">EVolocity</a></li>
+      <li><a href="#cv">Computer Vision</a></li>
+      <li><a href="#cafe">Café Map</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">Mechatronics · Embedded Systems · Outreach</p>
+    <h1>Hi, I'm Joella.<br><span>I build things that work end to end.</span></h1>
+    <p class="lede">
+      From flight hardware on a reusable spaceplane to a national STEM outreach program,
+      these are the projects I've designed, built and delivered across mechanical, electrical
+      and software engineering.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-solid">View projects</a>
+      <a href="https://www.linkedin.com/in/joella-tomkins" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- PROJECT INDEX -->
+  <section id="projects" class="index">
+    <h2 class="section-title">Projects</h2>
+    <div class="cards">
+      <a class="card" href="#rf">
+        <img class="contain" src="images/rf-pcb.png" alt="Render of the custom LoRa radio PCB" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Honours · RF</span>
+          <h3>RF Rocket Downlink</h3>
+          <p>A 915 MHz LoRa telemetry system and dynamic link budget for the UC Aerospace hybrid rocket.</p>
+        </div>
+      </a>
+      <a class="card" href="#dawn">
+        <img src="images/bench-test.jpg" alt="Camera PCB on the test bench" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Flight hardware</span>
+          <h3>Landing Bay Camera System</h3>
+          <p>Custom STM32 PCB, enclosure and firmware for the Mk-II B spaceplane.</p>
+        </div>
+      </a>
+      <a class="card" href="#ywis">
+        <img src="images/ywis-group.jpg" alt="Young Wāhine in STEM students at race day" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Outreach</span>
+          <h3>Young Wāhine in STEM</h3>
+          <p>A solar-powered RC car program for 26 students across 5 schools.</p>
+        </div>
+      </a>
+      <a class="card" href="#kart">
+        <img src="images/kart-body.jpg" alt="Electric go kart with body shell" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Competition</span>
+          <h3>1kW Electric Go Kart</h3>
+          <p>Arduino telemetry and 3D printed parts. Took 1st place in three national events.</p>
+        </div>
+      </a>
+      <a class="card" href="#cv">
+        <img src="images/squat-side.jpg" alt="Pose tracking overlay on a squat" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Software</span>
+          <h3>Weightlifting Form Analysis</h3>
+          <p>Python and OpenCV pose tracking that turns lifting footage into joint angles.</p>
+        </div>
+      </a>
+      <a class="card" href="#cafe">
+        <img src="images/cafe-map.jpg" alt="Café map web app screenshot" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Web</span>
+          <h3>Café Map</h3>
+          <p>A live map of NZ café reviews, synced from Google Sheets.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- RF ROCKET DOWNLINK -->
+  <article id="rf" class="project">
+    <header class="project-title"><h2>RF Rocket Downlink <span>University of Canterbury Aerospace Club</span></h2></header>
+    <div class="panel">
+      <h3>Overview</h3>
+      <p class="center-text">
+        For my final year honours project, I designed and built a <strong>long-range LoRa telemetry system</strong>
+        for the UC Aerospace hybrid rocket, paired with a <strong>dynamic link budget analysis</strong> that predicts
+        signal margin across the full flight profile. As sole author I owned it end to end: <strong>radio PCB,
+        RF matching, antenna, firmware</strong> and the <strong>ground station data pipeline</strong>, through to
+        manufactured hardware on the bench.
+      </p>
+
+      <div class="split">
+        <div>
+          <h3>The Project</h3>
+          <p>The brief was to stream flight data from the rocket to the ground station, and to understand how
+            the link behaves. Key constraints:</p>
+          <ul class="ticks">
+            <li><strong>Dynamic link:</strong> range, altitude and orientation change path loss and antenna gain in flight, so a static budget is not enough</li>
+            <li><strong>Regulatory:</strong> within the NZ ISM band and its power limits</li>
+            <li><strong>Integration:</strong> CAN interface to the flight computer, one board for flight and ground</li>
+            <li><strong>Field use:</strong> live data to the team at a remote site with no internet</li>
+          </ul>
+        </div>
+        <figure class="flow rf-diagram" aria-label="Telemetry system block diagram">
+          <div class="node dark">Flight Computer</div><div></div><div class="node dark">Dashboard</div>
+          <div class="link-v">CAN</div><div></div><div class="link-v up"></div>
+          <div class="node">STM32H5 PCB</div><div></div><div class="node">Laptop</div>
+          <div class="link-v">SPI</div><div></div><div class="link-v up"></div>
+          <div class="node">SX1262</div><div></div><div class="node">Ground PCB</div>
+          <div class="link-v">RF</div><div></div><div class="link-v up"></div>
+          <div class="node">J-Pole Antenna</div>
+          <div class="link-h"><b>LoRa</b><i></i><span>915 MHz</span></div>
+          <div class="node">Yagi Antenna</div>
+          <figcaption>Rocket (left) to ground station (right), using the same PCB on both ends</figcaption>
+        </figure>
+      </div>
+
+      <div class="split split-img rf-build">
+        <div>
+          <h3>How I Built It</h3>
+          <p>I designed a <strong>custom radio PCB in KiCad</strong> around an <strong>STM32H5</strong> microcontroller
+            and a <strong>Semtech SX1262 LoRa transceiver</strong>, operating at <strong>915 MHz</strong>. The board
+            receives flight data from the flight computer over <strong>CAN</strong> and drives the radio over
+            <strong>SPI</strong>. I calculated the <strong>RF matching network</strong> for the SX1262 at 915 MHz.</p>
+          <p>The <strong>same PCB is used on both the rocket and the ground station</strong>. That meant only one board
+            to design, assemble and bring up, and one firmware codebase to maintain. Any fault found on one end was
+            fixed on both, which cut debugging time. It also gave me a known-good reference board for bench testing,
+            and boards can be swapped between ends as spares.</p>
+          <p>The <strong>J-pole antenna</strong> was designed as its own PCB with a <strong>256 mm radiator</strong>,
+            deliberately long to leave trim allowance for <strong>VNA tuning</strong> onto frequency. I simulated the
+            Gerber geometry in <strong>NEC2</strong> to validate it. On the ground a <strong>Yagi</strong> feeds the
+            receive board, which streams telemetry into a <strong>custom-built dashboard</strong> so the team can
+            monitor the flight live.</p>
+          <p>Alongside the hardware I built a <strong>dynamic link budget model</strong> that tracks received power
+            and link margin through the flight rather than at a single worst-case point.</p>
+          <div class="chips">
+            <span>KiCad</span><span>STM32H5</span><span>SX1262 LoRa</span><span>RF matching</span><span>NEC2</span><span>VNA</span><span>CAN</span>
+          </div>
+        </div>
+        <div class="render-stack">
+          <img src="images/rf-pcb.png" alt="Render of the radio PCB with SMA connector" loading="lazy">
+          <div class="render-pair">
+            <img src="images/rf-yagi.png" alt="Yagi ground station antenna" loading="lazy">
+            <img src="images/rf-jpole.png" alt="J-pole PCB antenna" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <h3>Results</h3>
+      <p class="center-text">
+        The telemetry PCBs were manufactured and brought up on the bench, and the J-pole antenna was brought up on
+        the VNA for tuning. The project delivered a <strong>reusable flight and ground radio platform</strong> for
+        UC Aerospace and a <strong>method for predicting telemetry performance before launch</strong>.
+        <!-- TODO: add measured results, e.g. return loss / resonant frequency, RSSI and SNR at test range, predicted vs measured link margin -->
+      </p>
+    </div>
+  </article>
+
+  <!-- DAWN AEROSPACE -->
+  <article id="dawn" class="project">
+    <header class="project-title"><h2>Landing Bay Camera System <span>Dawn Aerospace</span></h2></header>
+    <div class="panel">
+      <h3>Overview</h3>
+      <p class="center-text">
+        During my internship at Dawn Aerospace I independently designed and delivered a complete
+        landing gear camera system for the <strong>Mk-II B reusable suborbital spaceplane</strong>.
+        The project spanned mechanical design, PCB development and firmware. I owned a real
+        flight hardware system end to end, from first principles through to bench-tested integration.
+      </p>
+
+      <div class="split">
+        <div>
+          <h3>The Project</h3>
+          <p>The brief was to fit an FPV camera capable of recording <strong>4K 60fps</strong> footage into
+            the landing gear bay of the spaceplane, controlled directly by the flight computer. The
+            constraints were significant:</p>
+          <ul class="ticks">
+            <li><strong>Size:</strong> the PCB and enclosure had to fit within the tight geometry of the landing gear bay</li>
+            <li><strong>Waterproofing:</strong> connector selection and enclosure design had to protect against moisture ingress</li>
+            <li><strong>Thermal:</strong> the camera tended to overheat, so it needed careful thermal management in an enclosed space</li>
+            <li><strong>Serviceability:</strong> the enclosure had to be easy to install and remove every flight</li>
+          </ul>
+        </div>
+        <figure class="flow flow-vertical" aria-label="Firmware state flow">
+          <div class="node">Power On / Boot</div><div class="arrow-d"></div>
+          <div class="node">Config Mode</div><div class="arrow-d"></div>
+          <div class="node">Config Confirmed</div><div class="arrow-d"></div>
+          <div class="node">Poll GPIO</div><div class="arrow-d"></div>
+          <div class="decision-row">
+            <div class="node dark">Stop Recording</div>
+            <span class="lbl">← No</span>
+            <div class="diamond"><span>GPIO<br>High?</span></div>
+            <span class="lbl">Yes →</span>
+            <div class="node dark">Start Recording</div>
+          </div>
+          <figcaption>Firmware loop: return to polling after each state change</figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery g3">
+        <img src="images/pcb-front.jpg" alt="Custom PCB, top side" loading="lazy">
+        <img src="images/pcb-back.jpg" alt="Custom PCB, bottom side" loading="lazy">
+        <img src="images/camera.jpg" alt="FPV camera module" loading="lazy">
+      </div>
+
+      <div class="split split-img">
+        <div>
+          <h3>How I Built It</h3>
+          <p>I designed a <strong>custom STM32-based PCB</strong> to bridge the flight computer's
+            <strong>GPIO output</strong> to the camera's <strong>UART interface</strong>. It handles power,
+            recording control and camera configuration, including framerate and resolution. The firmware
+            includes a configuration mode that sets camera parameters on initialisation.</p>
+          <p>I designed the <strong>mechanical enclosure</strong> in <strong>CAD</strong> by enveloping the
+            components and modelling directly to the internal surface geometry of the landing gear
+            bay, which gave a precise fit. It was manufactured in nylon, chosen for its strength-to-weight
+            properties and machinability, with waterproof connectors selected to meet the environmental
+            requirements.</p>
+          <h3>Results</h3>
+          <p>Full bench testing confirmed the system met every design requirement end to end. The GPIO to UART
+            conversion operated cleanly, thermal management kept the camera within operating temperature,
+            the waterproofing held up under testing, and the enclosure installed and uninstalled cleanly
+            within the intended workflow.</p>
+        </div>
+        <img class="tall" src="images/bench-test.jpg" alt="PCB under bench test with probes attached" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+  <!-- YOUNG WAHINE IN STEM -->
+  <article id="ywis" class="project">
+    <header class="project-title"><h2>Young Wāhine in STEM <span>Solar-Powered RC Car Program</span></h2></header>
+    <div class="panel">
+      <h3>Overview</h3>
+      <p class="center-text">
+        Young Wāhine in STEM is an <strong>outreach program I created from scratch</strong> in partnership with
+        <strong>EVolocity</strong> and <strong>Orion Energy</strong>. It introduces <strong>high school girls to
+        engineering</strong> through a hands-on, end-to-end build project. The pilot ran across
+        <strong>5 Christchurch schools</strong> with <strong>26 students</strong>, and it is planned for
+        <strong>national rollout</strong> the following year.
+      </p>
+
+      <div class="stats">
+        <div><b>5</b><span>schools</span></div>
+        <div><b>26</b><span>students</span></div>
+        <div><b>3</b><span>disciplines</span></div>
+        <div><b>1</b><span>race day</span></div>
+      </div>
+
+      <div class="gallery g3 wide">
+        <img src="images/ywis-group.jpg" alt="Students and partners at the program" loading="lazy">
+        <img src="images/ywis-computer.jpg" alt="Students working at a computer" loading="lazy">
+        <img src="images/ywis-room.jpg" alt="Workshop session in progress" loading="lazy">
+      </div>
+
+      <h3>The Project</h3>
+      <p>I designed the curriculum around a <strong>solar-powered RC car</strong>. I chose it because it covers all
+        <strong>three core engineering disciplines</strong> in a way that's tangible and exciting for students with
+        no prior background:</p>
+      <div class="pillars">
+        <div><h4>Mechanical</h4><p>Students followed <strong>CAD documentation</strong> to design components of their car</p></div>
+        <div><h4>Electrical</h4><p>Students soldered a <strong>custom PCB</strong> designed for the program</p></div>
+        <div><h4>Software</h4><p>Students wrote the <strong>embedded code</strong> to control their RC car</p></div>
+      </div>
+      <p>The program ended with a <strong>race day</strong>. Every student had a real finish line to work
+        toward and got to see their build perform.</p>
+
+      <div class="split split-img">
+        <div>
+          <h3>My Role</h3>
+          <p>I led the program <strong>end to end</strong>: scoping the project, writing the <strong>curriculum and
+            documentation</strong>, coordinating with <strong>partner organisations</strong> and <strong>facilitating the
+            workshops</strong> myself. My mechatronics background shaped how the project was structured. I could
+            draw on real engineering practice to decide what level of challenge was appropriate and how to
+            <strong>scaffold each discipline accessibly</strong>.</p>
+          <h3>What I Learnt</h3>
+          <p>Running <strong>live workshops</strong> taught me a lot about the gap between a plan and reality. I had to
+            <strong>observe quickly, make calls</strong> on what was and wasn't working, and <strong>refine content and
+            delivery between sessions</strong>, sometimes between workshops in the same week. It was a strong exercise
+            in <strong>rapid iteration under constraints</strong> I couldn't fully control: school schedules, varying
+            student experience levels and time pressure. Communicating <strong>technical ideas clearly to a
+            non-engineering audience</strong> turned out to be one of the most valuable skills I built. Knowing
+            something and being able to <strong>teach it</strong> are very different, and this program pushed me hard on that.</p>
+        </div>
+        <img class="tall" src="images/ywis-teaching.jpg" alt="Joella presenting to a classroom" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+  <!-- GO KART -->
+  <article id="kart" class="project">
+    <header class="project-title"><h2>1kW Electric Go Kart <span>EVolocity</span></h2></header>
+    <div class="panel">
+      <div class="gallery kart">
+        <img class="k1" src="images/kart-body.jpg" alt="Team fitting the body shell to the kart" loading="lazy">
+        <img class="k2" src="images/kart-steering.jpg" alt="Kart chassis and steering" loading="lazy">
+        <img class="k3" src="images/kart-arduino.jpg" alt="Arduino breadboard with LCD display" loading="lazy">
+        <img class="k4" src="images/kart-axle.jpg" alt="Rear axle and drive assembly" loading="lazy">
+      </div>
+
+      <div class="cols3">
+        <div>
+          <h4>What</h4>
+          <ul class="ticks">
+            <li>Completed as a Year 13 student with no prior electronics experience</li>
+            <li>Built a 1kW electric go kart for the EVolocity national competition</li>
+            <li>Led Arduino embedded systems and 3D printed component design</li>
+          </ul>
+        </div>
+        <div>
+          <h4>How</h4>
+          <ul class="ticks">
+            <li>Designed lightweight mounts in Fusion 360 and 3D printed them to fit the frame</li>
+            <li>Built an Arduino monitoring system using current and voltage sensing for real-time battery state of charge</li>
+            <li>Implemented IR-based speed sensing with interrupt handling and debouncing</li>
+            <li>Streamed live data via Bluetooth serial to two onboard LCD displays</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <ul class="ticks">
+            <li><strong>1st place</strong> in Drag Race, Efficiency and Street Circuit at the Auckland national event</li>
+            <li>Arduino system delivered real-time battery and performance data throughout racing</li>
+            <li>Custom 3D prints held structural loads while staying lightweight</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="flow flow-horizontal" aria-label="Telemetry program flow">
+        <div class="node">Start kart and initialise program. Read battery PCB and sensor data</div>
+        <div class="arrow-r"></div>
+        <div class="node">Calculate battery % from current draw and voltage reading</div>
+        <div class="arrow-r"></div>
+        <div class="node">Calculate speed via IR sensor interrupt with debouncing</div>
+        <div class="arrow-r"></div>
+        <div class="node">Output data over Bluetooth serial to two LCD displays</div>
+      </figure>
+    </div>
+  </article>
+
+  <!-- COMPUTER VISION -->
+  <article id="cv" class="project">
+    <header class="project-title"><h2>Weightlifting Form Analysis <span>Computer Vision</span></h2></header>
+    <div class="panel">
+      <div class="split split-img">
+        <div>
+          <p>I developed a <strong>computer vision tool</strong> for <strong>kinematic analysis</strong> of weightlifting
+            movements. It processes recorded video to extract <strong>3D joint coordinates</strong> and track
+            <strong>33 body landmarks</strong>, then calculates dynamic <strong>joint angles</strong> and <strong>bar path
+            verticality</strong>.</p>
+          <p>Using <strong>error-detection heuristics</strong>, the tool identifies biomechanical deviations such as
+            <strong>lumbar rounding</strong> or <strong>asymmetric loading</strong>. It's built with
+            <strong>Python</strong> and <strong>OpenCV</strong> and turns raw footage into
+            <strong>actionable metrics</strong> for improving technique.</p>
+          <div class="chips">
+            <span>Python</span><span>OpenCV</span><span>Pose estimation</span><span>Kinematics</span>
+          </div>
+        </div>
+        <div class="gallery g2">
+          <img src="images/squat-side.jpg" alt="Pose landmarks overlaid on a squat, side view" loading="lazy">
+          <img src="images/squat-back.jpg" alt="Pose landmarks overlaid on a squat, rear view" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CAFE MAP -->
+  <article id="cafe" class="project">
+    <header class="project-title"><h2>Café Map</h2></header>
+    <div class="panel">
+      <div class="split split-img">
+        <div>
+          <p>An interactive web application that visualises my personal database of café reviews across
+            New Zealand. It syncs ratings and notes stored in <strong>Google Sheets</strong> with an interactive map,
+            so new cafés are added and displayed automatically.</p>
+          <p>It was a self-directed project to learn <strong>HTML, CSS and JavaScript</strong>, using <strong>Google
+            Apps Script</strong>, <strong>GitHub Pages</strong> and version control to build and deploy a practical
+            tool from scratch.</p>
+          <a class="btn btn-solid" href="https://jt0mkins.github.io/cafe_map/" target="_blank" rel="noopener">Open live demo →</a>
+        </div>
+        <img src="images/cafe-map.jpg" alt="Café map screenshot with rankings sidebar" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer id="contact" class="footer">
+  <h2>Let's talk</h2>
+  <p>I'm always keen to chat about engineering, hardware or outreach.</p>
+  <ul class="contact">
+    <li><span aria-hidden="true">✉</span><a href="mailto:tomkinsjoella@gmail.com">tomkinsjoella@gmail.com</a></li>
+    <li><span aria-hidden="true">☏</span><a href="tel:+64224765310">022 476 5310</a></li>
+    <li><span aria-hidden="true">◍</span><a href="https://www.linkedin.com/in/joella-tomkins" target="_blank" rel="noopener">linkedin.com/in/joella-tomkins</a></li>
+  </ul>
+  <p class="fine">© <span id="yr"></span> Joella Tomkins</p>
+</footer>
+
+<div class="lightbox" hidden><img alt=""></div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile nav
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.addEventListener('click', e => { if (e.target.tagName === 'A') links.classList.remove('open'); });
+
+  // lightbox for project photos
+  const lb = document.querySelector('.lightbox');
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll('.project img').forEach(img => {
+    img.addEventListener('click', () => { lbImg.src = img.src; lbImg.alt = img.alt; lb.hidden = false; });
+  });
+  lb.addEventListener('click', () => { lb.hidden = true; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.hidden = true; });
+
+  // fade sections in on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.project, .index').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
