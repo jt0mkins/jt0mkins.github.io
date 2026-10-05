@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joella Tomkins · Embedded Systems</title>
-  <meta name="description" content="Embedded systems portfolio of Joella Tomkins: custom STM32 and LoRa hardware, firmware, PCB design and RF.">
+  <title>Joella Tomkins · Projects</title>
+  <meta name="description" content="Engineering projects by Joella Tomkins: flight hardware, embedded systems, STEM outreach and computer vision.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Domine:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,11 +17,12 @@
     <a href="#top" class="brand">Joella Tomkins</a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <ul class="nav-links">
-      <li><a href="#toolkit">Toolkit</a></li>
       <li><a href="#rf">RF Downlink</a></li>
       <li><a href="#dawn">Dawn Aerospace</a></li>
+      <li><a href="#ywis">Young Wāhine in STEM</a></li>
       <li><a href="#kart">EVolocity</a></li>
-      <li><a href="#ywis">Solar Car Program</a></li>
+      <li><a href="#cv">Computer Vision</a></li>
+      <li><a href="#cafe">Café Map</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
@@ -31,89 +32,69 @@
 
   <!-- HERO -->
   <section class="hero">
-    <p class="eyebrow">Embedded Systems · PCB Design · Firmware · RF</p>
+    <p class="eyebrow">Embedded Systems · Mechatronics · Outreach</p>
     <h1>Hi, I'm Joella.<br><span>I build things that work end to end.</span></h1>
     <p class="lede">
-      I'm a final-year Mechatronics Engineering student at the University of Canterbury. I design custom
-      microcontroller boards, write the firmware that runs on them and bring them up on the bench:
-      a LoRa telemetry radio for a hybrid rocket, a camera controller for a reusable spaceplane and a
-      live data system for a race-winning electric kart.
+      From custom microcontroller boards and firmware for a rocket and a reusable spaceplane
+      to a national STEM outreach program, these are the projects I've designed, built and
+      delivered across electrical, software and mechanical engineering.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-solid">View projects</a>
-      <a href="https://github.com/jt0mkins" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/joella-tomkins" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </section>
-
-  <!-- TOOLKIT -->
-  <section id="toolkit" class="toolkit-band">
-    <div class="index">
-      <h2 class="section-title">Embedded Toolkit</h2>
-      <p class="toolkit-sub">The parts, protocols and tools I reach for, as seen across my projects.</p>
-      <div class="toolkit">
-      <div class="ic">
-        <i class="notch"></i><i class="pin1"></i>
-        <p class="designator">U1 · MCU</p>
-        <h3>MCUs &amp; Radios</h3>
-        <div class="pills"><span>STM32H5</span><span>STM32</span><span>Arduino</span><span>Arduino Nano</span><span>SX1262 LoRa</span></div>
-      </div>
-      <div class="ic">
-        <i class="notch"></i><i class="pin1"></i>
-        <p class="designator">U2 · I/O</p>
-        <h3>Interfaces</h3>
-        <div class="pills"><span>CAN</span><span>SPI</span><span>UART</span><span>GPIO</span><span>Bluetooth serial</span><span>LoRa 915 MHz</span></div>
-      </div>
-      <div class="ic">
-        <i class="notch"></i><i class="pin1"></i>
-        <p class="designator">U3 · RF</p>
-        <h3>Hardware &amp; RF</h3>
-        <div class="pills"><span>KiCad</span><span>RF matching</span><span>PCB antennas</span><span>VNA tuning</span><span>NEC2</span><span>Link budgets</span></div>
-      </div>
-      <div class="ic">
-        <i class="notch"></i><i class="pin1"></i>
-        <p class="designator">U4 · FW</p>
-        <h3>Firmware &amp; Test</h3>
-        <div class="pills"><span>C++</span><span>Python</span><span>State machines</span><span>Interrupts</span><span>Debouncing</span><span>Sensor acquisition</span><span>Bench bring-up</span></div>
-      </div>
-      </div>
     </div>
   </section>
 
   <!-- PROJECT INDEX -->
   <section id="projects" class="index">
-    <h2 class="section-title">Embedded Projects</h2>
-    <div class="cards cards-4">
+    <h2 class="section-title">Projects</h2>
+    <div class="cards">
       <a class="card" href="#rf">
         <img class="contain" src="images/rf-pcb.png" alt="Render of the custom LoRa radio PCB" loading="lazy">
         <div class="card-body">
-          <span class="tag">STM32H5 · SX1262 · CAN · SPI</span>
+          <span class="tag">Honours · Embedded RF</span>
           <h3>RF Rocket Downlink</h3>
-          <p>Honours project: a custom 915 MHz LoRa telemetry board, PCB antenna and dynamic link budget for a hybrid rocket.</p>
+          <p>A 915 MHz LoRa telemetry system and dynamic link budget for the UC Aerospace hybrid rocket.</p>
         </div>
       </a>
       <a class="card" href="#dawn">
         <img src="images/bench-test.jpg" alt="Camera PCB on the test bench" loading="lazy">
         <div class="card-body">
-          <span class="tag">STM32 · GPIO · UART</span>
+          <span class="tag">Embedded flight hardware</span>
           <h3>Landing Bay Camera System</h3>
-          <p>A custom STM32 board and firmware that let a spaceplane's flight computer control a 4K camera.</p>
-        </div>
-      </a>
-      <a class="card" href="#kart">
-        <img src="images/kart-arduino.jpg" alt="Arduino breadboard with LCD display" loading="lazy">
-        <div class="card-body">
-          <span class="tag">Arduino · Interrupts · Bluetooth</span>
-          <h3>1kW Electric Go Kart</h3>
-          <p>Real-time battery and speed telemetry to onboard displays. Took 1st place in three national events.</p>
+          <p>Custom STM32 PCB, enclosure and firmware for the Mk-II B spaceplane.</p>
         </div>
       </a>
       <a class="card" href="#ywis">
-        <img src="images/ywis-computer.jpg" alt="Students writing code for their cars" loading="lazy">
+        <img src="images/ywis-group.jpg" alt="Young Wāhine in STEM students at race day" loading="lazy">
         <div class="card-body">
-          <span class="tag">Custom PCB · Embedded C++</span>
-          <h3>Solar-Powered RC Car Program</h3>
-          <p>An outreach program where 26 students soldered a custom PCB and wrote the firmware for their own cars.</p>
+          <span class="tag">Outreach</span>
+          <h3>Young Wāhine in STEM</h3>
+          <p>A solar-powered RC car program for 26 students across 5 schools.</p>
+        </div>
+      </a>
+      <a class="card" href="#kart">
+        <img src="images/kart-body.jpg" alt="Electric go kart with body shell" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Embedded · Competition</span>
+          <h3>1kW Electric Go Kart</h3>
+          <p>Arduino firmware for real-time battery and speed telemetry. Took 1st place in three national events.</p>
+        </div>
+      </a>
+      <a class="card" href="#cv">
+        <img src="images/squat-side.jpg" alt="Pose tracking overlay on a squat" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Software</span>
+          <h3>Weightlifting Form Analysis</h3>
+          <p>Python and OpenCV pose tracking that turns lifting footage into joint angles.</p>
+        </div>
+      </a>
+      <a class="card" href="#cafe">
+        <img src="images/cafe-map.jpg" alt="Café map web app screenshot" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Web</span>
+          <h3>Café Map</h3>
+          <p>A live map of NZ café reviews, synced from Google Sheets.</p>
         </div>
       </a>
     </div>
@@ -263,11 +244,68 @@
             conversion operated cleanly, thermal management kept the camera within operating temperature,
             the waterproofing held up under testing, and the enclosure installed and uninstalled cleanly
             within the intended workflow.</p>
-          <div class="chips">
-            <span>STM32</span><span>Custom PCB</span><span>GPIO</span><span>UART</span><span>Camera config firmware</span><span>Thermal design</span>
-          </div>
         </div>
         <img class="tall" src="images/bench-test.jpg" alt="PCB under bench test with probes attached" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+  <!-- YOUNG WAHINE IN STEM -->
+  <article id="ywis" class="project">
+    <header class="project-title"><h2>Young Wāhine in STEM <span>Solar-Powered RC Car Program</span></h2></header>
+    <div class="panel">
+      <h3>Overview</h3>
+      <p class="center-text">
+        Young Wāhine in STEM is an <strong>outreach program I created from scratch</strong> in partnership with
+        <strong>EVolocity</strong> and <strong>Orion Energy</strong>. It introduces <strong>high school girls to
+        engineering</strong> through a hands-on, end-to-end build project. The pilot ran across
+        <strong>5 Christchurch schools</strong> with <strong>26 students</strong>, and it is planned for
+        <strong>national rollout</strong> the following year.
+      </p>
+
+      <div class="stats">
+        <div><b>5</b><span>schools</span></div>
+        <div><b>26</b><span>students</span></div>
+        <div><b>3</b><span>disciplines</span></div>
+        <div><b>1</b><span>race day</span></div>
+      </div>
+
+      <div class="gallery g3 wide">
+        <img src="images/ywis-group.jpg" alt="Students and partners at the program" loading="lazy">
+        <img src="images/ywis-computer.jpg" alt="Students working at a computer" loading="lazy">
+        <img src="images/ywis-room.jpg" alt="Workshop session in progress" loading="lazy">
+      </div>
+
+      <h3>The Project</h3>
+      <p>I designed the curriculum around a <strong>solar-powered RC car</strong>. I chose it because it covers all
+        <strong>three core engineering disciplines</strong> in a way that's tangible and exciting for students with
+        no prior background:</p>
+      <div class="pillars">
+        <div><h4>Mechanical</h4><p>Students followed <strong>CAD documentation</strong> to design components of their car</p></div>
+        <div><h4>Electrical</h4><p>Students soldered a <strong>custom PCB</strong> designed for the program</p></div>
+        <div><h4>Software</h4><p>Students wrote the <strong>embedded code</strong> to control their RC car</p></div>
+      </div>
+      <p>The program ended with a <strong>race day</strong>. Every student had a real finish line to work
+        toward and got to see their build perform.</p>
+
+      <div class="split split-img">
+        <div>
+          <h3>My Role</h3>
+          <p>I led the program <strong>end to end</strong>: scoping the project, writing the <strong>curriculum and
+            documentation</strong>, coordinating with <strong>partner organisations</strong> and <strong>facilitating the
+            workshops</strong> myself. My mechatronics background shaped how the project was structured. I could
+            draw on real engineering practice to decide what level of challenge was appropriate and how to
+            <strong>scaffold each discipline accessibly</strong>.</p>
+          <h3>What I Learnt</h3>
+          <p>Running <strong>live workshops</strong> taught me a lot about the gap between a plan and reality. I had to
+            <strong>observe quickly, make calls</strong> on what was and wasn't working, and <strong>refine content and
+            delivery between sessions</strong>, sometimes between workshops in the same week. It was a strong exercise
+            in <strong>rapid iteration under constraints</strong> I couldn't fully control: school schedules, varying
+            student experience levels and time pressure. Communicating <strong>technical ideas clearly to a
+            non-engineering audience</strong> turned out to be one of the most valuable skills I built. Knowing
+            something and being able to <strong>teach it</strong> are very different, and this program pushed me hard on that.</p>
+        </div>
+        <img class="tall" src="images/ywis-teaching.jpg" alt="Joella presenting to a classroom" loading="lazy">
       </div>
     </div>
   </article>
@@ -320,80 +358,9 @@
         <div class="arrow-r"></div>
         <div class="node">Output data over Bluetooth serial to two LCD displays</div>
       </figure>
-      <div class="chips chips-center">
-        <span>Arduino</span><span>Current and voltage sensing</span><span>IR speed sensing</span><span>Interrupts</span><span>Debouncing</span><span>Bluetooth serial</span><span>LCD displays</span>
-      </div>
     </div>
   </article>
 
-  <!-- YOUNG WAHINE IN STEM -->
-  <article id="ywis" class="project">
-    <header class="project-title"><h2>Young Wāhine in STEM <span>Solar-Powered RC Car Program</span></h2></header>
-    <div class="panel">
-      <h3>Overview</h3>
-      <p class="center-text">
-        Young Wāhine in STEM is an <strong>outreach program I created from scratch</strong> in partnership with
-        <strong>EVolocity</strong> and <strong>Orion Energy</strong>. It introduces <strong>high school girls to
-        engineering</strong> through a hands-on, end-to-end build project. The pilot ran across
-        <strong>5 Christchurch schools</strong> with <strong>26 students</strong>, and it is planned for
-        <strong>national rollout</strong> the following year.
-      </p>
-
-      <div class="stats">
-        <div><b>5</b><span>schools</span></div>
-        <div><b>26</b><span>students</span></div>
-        <div><b>3</b><span>disciplines</span></div>
-        <div><b>1</b><span>race day</span></div>
-      </div>
-
-      <div class="gallery g3 wide">
-        <img src="images/ywis-group.jpg" alt="Students and partners at the program" loading="lazy">
-        <img src="images/ywis-computer.jpg" alt="Students working at a computer" loading="lazy">
-        <img src="images/ywis-room.jpg" alt="Workshop session in progress" loading="lazy">
-      </div>
-
-      <h3>The Project</h3>
-      <p>I designed the curriculum around a <strong>solar-powered RC car</strong>. I chose it because it covers all
-        <strong>three core engineering disciplines</strong> in a way that's tangible and exciting for students with
-        no prior background:</p>
-      <div class="pillars">
-        <div><h4>Mechanical</h4><p>Students followed <strong>CAD documentation</strong> to design components of their car</p></div>
-        <div><h4>Electrical</h4><p>Students soldered a <strong>custom PCB</strong> designed for the program</p></div>
-        <div><h4>Software</h4><p>Students wrote the <strong>embedded code</strong> to control their RC car</p></div>
-      </div>
-      <p>The program ended with a <strong>race day</strong>. Every student had a real finish line to work
-        toward and got to see their build perform.</p>
-      <div class="repo-links">
-        <a href="https://github.com/jt0mkins/YWIM_Solar_Car_PCBs" target="_blank" rel="noopener">Solar car PCBs on GitHub →</a>
-        <a href="https://github.com/jt0mkins/YWIM_Solar_Car_Firmware" target="_blank" rel="noopener">Solar car firmware (C++) on GitHub →</a>
-      </div>
-
-      <div class="split split-img">
-        <div>
-          <h3>My Role</h3>
-          <p>I led the program <strong>end to end</strong>: scoping the project, writing the <strong>curriculum and
-            documentation</strong>, coordinating with <strong>partner organisations</strong> and <strong>facilitating the
-            workshops</strong> myself. My mechatronics background shaped how the project was structured. I could
-            draw on real engineering practice to decide what level of challenge was appropriate and how to
-            <strong>scaffold each discipline accessibly</strong>.</p>
-          <h3>What I Learnt</h3>
-          <p>Running <strong>live workshops</strong> taught me a lot about the gap between a plan and reality. I had to
-            <strong>observe quickly, make calls</strong> on what was and wasn't working, and <strong>refine content and
-            delivery between sessions</strong>, sometimes between workshops in the same week. It was a strong exercise
-            in <strong>rapid iteration under constraints</strong> I couldn't fully control: school schedules, varying
-            student experience levels and time pressure. Communicating <strong>technical ideas clearly to a
-            non-engineering audience</strong> turned out to be one of the most valuable skills I built. Knowing
-            something and being able to <strong>teach it</strong> are very different, and this program pushed me hard on that.</p>
-        </div>
-        <img class="tall" src="images/ywis-teaching.jpg" alt="Joella presenting to a classroom" loading="lazy">
-      </div>
-    </div>
-  </article>
-
-  <!-- OTHER PROJECTS -->
-  <section id="other" class="index other">
-    <h2 class="section-title">Other Projects</h2>
-    <div class="other-grid">
   <!-- COMPUTER VISION -->
   <article id="cv" class="project">
     <header class="project-title"><h2>Weightlifting Form Analysis <span>Computer Vision</span></h2></header>
@@ -422,7 +389,7 @@
 
   <!-- CAFE MAP -->
   <article id="cafe" class="project">
-    <header class="project-title"><h2>Café Map <span>Web App</span></h2></header>
+    <header class="project-title"><h2>Café Map</h2></header>
     <div class="panel">
       <div class="split split-img">
         <div>
@@ -439,14 +406,11 @@
     </div>
   </article>
 
-    </div>
-  </section>
-
 </main>
 
 <footer id="contact" class="footer">
   <h2>Let's talk</h2>
-  <p>I'm always keen to chat about embedded systems, PCB design or RF.</p>
+  <p>I'm always keen to chat about engineering, hardware or outreach.</p>
   <ul class="contact">
     <li><span aria-hidden="true">✉</span><a href="mailto:tomkinsjoella@gmail.com">tomkinsjoella@gmail.com</a></li>
     <li><span aria-hidden="true">☏</span><a href="tel:+64224765310">022 476 5310</a></li>
