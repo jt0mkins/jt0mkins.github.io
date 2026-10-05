@@ -22,7 +22,6 @@
       <li><a href="#dawn">Dawn Aerospace</a></li>
       <li><a href="#kart">EVolocity</a></li>
       <li><a href="#ywis">Solar Car Program</a></li>
-      <li><a href="#github">GitHub</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
@@ -48,24 +47,35 @@
   </section>
 
   <!-- TOOLKIT -->
-  <section id="toolkit" class="index">
-    <h2 class="section-title">Embedded Toolkit</h2>
-    <div class="toolkit">
-      <div>
-        <h4>Microcontrollers &amp; ICs</h4>
-        <ul><li>STM32H5</li><li>STM32</li><li>Arduino and Arduino Nano</li><li>Semtech SX1262 LoRa</li></ul>
+  <section id="toolkit" class="toolkit-band">
+    <div class="index">
+      <h2 class="section-title">Embedded Toolkit</h2>
+      <p class="toolkit-sub">The parts, protocols and tools I reach for, as seen across my projects.</p>
+      <div class="toolkit">
+      <div class="ic">
+        <i class="notch"></i><i class="pin1"></i>
+        <p class="designator">U1 · MCU</p>
+        <h3>MCUs &amp; Radios</h3>
+        <div class="pills"><span>STM32H5</span><span>STM32</span><span>Arduino</span><span>Arduino Nano</span><span>SX1262 LoRa</span></div>
       </div>
-      <div>
-        <h4>Interfaces</h4>
-        <ul><li>CAN</li><li>SPI</li><li>UART</li><li>GPIO</li><li>Bluetooth serial</li><li>LoRa at 915 MHz</li></ul>
+      <div class="ic">
+        <i class="notch"></i><i class="pin1"></i>
+        <p class="designator">U2 · I/O</p>
+        <h3>Interfaces</h3>
+        <div class="pills"><span>CAN</span><span>SPI</span><span>UART</span><span>GPIO</span><span>Bluetooth serial</span><span>LoRa 915 MHz</span></div>
       </div>
-      <div>
-        <h4>Hardware &amp; RF</h4>
-        <ul><li>KiCad PCB design</li><li>RF matching networks</li><li>PCB antenna design</li><li>VNA tuning</li><li>NEC2 simulation</li><li>Link budget analysis</li></ul>
+      <div class="ic">
+        <i class="notch"></i><i class="pin1"></i>
+        <p class="designator">U3 · RF</p>
+        <h3>Hardware &amp; RF</h3>
+        <div class="pills"><span>KiCad</span><span>RF matching</span><span>PCB antennas</span><span>VNA tuning</span><span>NEC2</span><span>Link budgets</span></div>
       </div>
-      <div>
-        <h4>Firmware &amp; Bring-up</h4>
-        <ul><li>C++ and Python</li><li>State machines</li><li>Interrupts and debouncing</li><li>Current and voltage sensing</li><li>Bench test and bring-up</li></ul>
+      <div class="ic">
+        <i class="notch"></i><i class="pin1"></i>
+        <p class="designator">U4 · FW</p>
+        <h3>Firmware &amp; Test</h3>
+        <div class="pills"><span>C++</span><span>Python</span><span>State machines</span><span>Interrupts</span><span>Debouncing</span><span>Sensor acquisition</span><span>Bench bring-up</span></div>
+      </div>
       </div>
     </div>
   </section>
@@ -430,34 +440,6 @@
   </article>
 
     </div>
-  </section>
-
-  <!-- GITHUB -->
-  <section id="github" class="index">
-    <h2 class="section-title">More Embedded Work on GitHub</h2>
-    <div class="repos">
-      <a class="repo" href="https://github.com/jt0mkins/Pocket-Lab-Power-Supply" target="_blank" rel="noopener">
-        <h3>Pocket Lab Power Supply</h3>
-        <p>A pocket-sized, battery-powered lab bench supply running on a 4S lithium-ion pack, with adjustable voltage and current limit, USB-C PD charging and an LED matrix display. Open hardware and firmware.</p>
-        <span class="lang">C++ · Hardware · Work in progress</span>
-      </a>
-      <a class="repo" href="https://github.com/jt0mkins/Kotare-Launch" target="_blank" rel="noopener">
-        <h3>Kotare Launch</h3>
-        <p>A rocket flight board paired with an SDR-based ground station that receives data while the rocket is in flight.</p>
-        <span class="lang">C++ · Python · SDR</span>
-      </a>
-      <a class="repo" href="https://github.com/jt0mkins/PressureSensor_Nano" target="_blank" rel="noopener">
-        <h3>Pressure Sensor Logger</h3>
-        <p>An Arduino Nano reads a 0–100 bar sensor at 10 Hz over its 0.5–4.5 V analog output and streams readings over USB to a Python logger that saves them as CSV.</p>
-        <span class="lang">C++ · Python · Arduino Nano</span>
-      </a>
-      <a class="repo" href="https://github.com/jt0mkins/YWIM_Solar_Car_Firmware" target="_blank" rel="noopener">
-        <h3>Solar Car Firmware &amp; PCBs</h3>
-        <p>The firmware and PCB designs behind the Young Wāhine in STEM solar-powered RC car program.</p>
-        <span class="lang">C++ · PCB</span>
-      </a>
-    </div>
-    <p class="center-text"><a class="btn btn-outline" href="https://github.com/jt0mkins" target="_blank" rel="noopener">All repositories →</a></p>
   </section>
 
 </main>
