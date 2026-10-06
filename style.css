@@ -105,6 +105,8 @@ h1, h2, h3, h4 { font-family: var(--serif-display); font-weight: 400; color: var
 .g3 { grid-template-columns: repeat(3, 1fr); }
 .g3 img { aspect-ratio: 3/2; }
 .g3.wide img { aspect-ratio: 2.6/1; }
+.g2w { grid-template-columns: 1fr 1fr; }
+.g2w img { aspect-ratio: 3/2; }
 .g2 { grid-template-columns: 1fr 1fr; margin: 0; }
 .g2 img { aspect-ratio: 3/4; }
 .kart { grid-template-columns: 1.6fr 1fr 1.3fr; grid-template-rows: 1.6fr 1fr; height: 440px; margin-top: 0; }
