@@ -175,10 +175,13 @@ h1, h2, h3, h4 { font-family: var(--serif-display); font-weight: 400; color: var
 
 .card img.contain { object-fit: contain; background: var(--paper); padding: 14px; }
 .render-stack { display: flex; flex-direction: column; gap: 14px; }
-.render-stack img { background: var(--paper); border: 1.5px solid var(--gold-soft); border-radius: var(--radius); padding: 18px; width: 100%; object-fit: contain; }
+.render-stack img { border: 1.5px solid var(--gold-soft); border-radius: var(--radius); width: 100%; object-fit: cover; }
 .render-stack > img { aspect-ratio: 4/3; }
-.render-pair { display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; }
-.render-pair img { aspect-ratio: 1; height: 100%; }
+.render-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.render-pair img { aspect-ratio: 3/4; }
+.wide-photo { margin: 28px 0; }
+.wide-photo img { width: 100%; aspect-ratio: 21/9; object-fit: cover; border: 1.5px solid var(--gold-soft); border-radius: var(--radius); }
+.wide-photo figcaption { text-align: center; font-size: .85rem; color: var(--muted); margin-top: 8px; }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 2.5px solid var(--gold-dark); background: var(--card); text-align: center; padding: 60px 20px 30px; }
